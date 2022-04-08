@@ -8,7 +8,8 @@
 
 ```console
 -- Compiling module test
-** Warning: C:/modeltech64_2020.4/examples/test.v(6): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/modeltech64_2020.4/examples/test.v(6): (vlog-2600) [RDGN] -
+Redundant digits in numeric literal.
 ```
 
 علت این هشدار برمی‌گردد به خط `6` عبارت
@@ -94,10 +95,14 @@ vcd flush     // Write the file up to now without breaking the simulation
 خطای نمایش داده شده این است: (هر جا که به `count` مقداردهی شده)
 
 ```console
-** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(8): (vlog-2110) Illegal reference to net "count".
-** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(10): (vlog-2110) Illegal reference to net "count".
-** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(12): (vlog-2110) Illegal reference to net "count".
-** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(14): (vlog-2110) Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(8): (vlog-2110) 
+Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(10): (vlog-2110) 
+Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(12): (vlog-2110) 
+Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(14): (vlog-2110) 
+Illegal reference to net "count".
 ```
 
 ایراد کد این است که برای `count` رجیستری تعریف نشده. در wire که نمی‌شود مقدار ذخیره کرد.
@@ -132,7 +137,8 @@ reg clk,reset,up_down,load;
 reg [3:0] data;
 wire [3:0] count;
 always #5 clk = ~clk;
- counter UUT (.clk(clk),.reset(reset),.up_down(up_down),.load(load),.data(data),.count(count));
+ counter UUT (.clk(clk),.reset(reset),.up_down(up_down)
+ 		,.load(load),.data(data),.count(count));
 initial
 begin
 $monitor("%d", data);

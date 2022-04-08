@@ -42,7 +42,9 @@ else
 out <= in1;
 ```
 
-![im](https://upload.wikimedia.org/wikipedia/commons/6/66/Multiplexer.png)
+![circuit-C](circuitC.png)
+
+یک مالتی‌پلکسر داریم که `sel` بین `in0` و `in1` انتخاب می‌کند. سپس خروجی تا کلاک بعدی latch می‌شود. 
 
 ### D
 ```verilog

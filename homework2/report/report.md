@@ -34,8 +34,84 @@ run
 ```
 
 ### ب
+در زمان ۱۰ دقیقا در حال تغییر است. قبل آن مقدار ‍`13 + 5 = 16` ذخیره شده (چون جا هم دارد چیزی دور ریخته نمی‌شود.) و پس از آن
+دو بیت اضافه‌ی آن دور ریخته می‌شود و برابر با ‍`11` یا عدد ۳ دسیمال است.
+
+### پ
+اعشار دور ریخته شده و مقدار ۱۳ را دارد.
+
+### ت
+عدد
+ `12'h?f0`
+ یعنی ۱۲ بیت دارد که چهار بیت راست ۰ سپس چهار بیت عدد f (1111) و سپس بیت‌های باقی‌مانده به صورت z یا همان high impedance 
+است. اما ۴ بیت از ۱۶ بیت متغییر باقی می‌ماند که همان ۰ می‌مانند. نمایش باینری عدد `0000zzzz11110000` است ولی در نمایش دسیمال
+‍`Z` 
+(پر ارزش‌ترین بیت) نشان داده می‌شود که جالب است.
+
+### ث
+تنها ۶ بیت سمت راست متغییر را assign می‌کنیم. این ۶ بیت هم صراحتا اعلام کرده‌ایم `x1zz00`. اما نمایش دسیمال مانند قبل به پرارزش‌ترین بیت کار دارد که اینجا `x` است.
 
 
+## 2
+روش‌های مختلفی برای این کار وجود دارد. برخی از نرم‌افزارها به صورت گرافیکی نیز می‌توانند این فایل را تولید کنند. اما من پس از اجرای simulation در کنسول transcript نرم‌افزار ModelSim این دستورات را وارد کردم:
+
+
+```console
+vcd file out.vcd  // Set this file as the vcd output
+vcd add -r test.v // Add test.v variables to the wave
+run               // Run the simulation
+vcd help          // Find out what to do next
+# ** UI-Msg: (vsim-4002) Invalid keyword 'help'. Expected 'add', 'checkpoint', 'comment', 'dumpports', 'dumpportsall', 'dumpportsflush', 'dumpportslimit', 'dumpportsoff', 'dumpportson', 'file', 'files', 'flush', 'limit', 'off', or 'on'.
+# Usage:
+#   vcd add <arguments>
+#   vcd checkpoint <arguments>
+#   vcd comment <arguments>
+#   vcd dumpports <arguments>
+#   vcd dumpportsall <arguments>
+#   vcd dumpportsflush <arguments>
+#   vcd dumpportslimit <arguments>
+#   vcd dumpportsoff <arguments>
+#   vcd dumpportson <arguments>
+#   vcd file <arguments>
+#   vcd files <arguments>
+#   vcd flush <arguments>
+#   vcd limit <arguments>
+#   vcd off <arguments>
+#   vcd on <arguments>
+vcd on        // Just to make sure
+vcd flush     // Write the file up to now without breaking the simulation
+```
+
+## 3
+این کد یک شمارنده‌ی ۴ بیتی را به روش behavioral تعریف می‌کند.
+`reset‍`
+که از نوع **ناهم‌زمان** است، خروجی و مقدار ذخیره شده را صفر می‌کند (در بالا رفتن کلاک).
+`load`
+در صورت فعال بودن ورودی `data` را خوانده و آن را در حافظه و خروجی load می‌کند. (و در این کلاک شمارشی نداریم)
+و در غیر این دو صورت بسته به مقدار `up_down` یک شمارش به بالا یا پایین خواهیم داشت. (اگر فعال باشد بالا و در غیر این صورت پایین)
+
+ایراد کد این است که برای `count` رجیستری تعریف نشده. در wire که نمی‌شود مقدار ذخیره کرد.
+کد درست در زیر آمده
+
+```verilog
+module counter(clk,reset,up_down,load,data,count);
+ input clk,reset,load,up_down;
+ input [3:0] data;
+ output [3:0] count;
+ reg [3:0] count; 
+ always@(posedge clk)
+ begin
+ 	if(reset)
+ 		count <= 0;
+	else if(load)
+ 		count <= data;
+	else if(up_down)
+		count <= count + 1;
+	else
+	count <= count - 1;
+ end
+endmodule :counter
+```
 
 ## 4
 ### A

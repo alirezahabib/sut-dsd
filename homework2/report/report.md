@@ -54,7 +54,7 @@ run
 
 ## 2
 روش‌های مختلفی برای این کار وجود دارد. برخی از نرم‌افزارها به صورت گرافیکی نیز می‌توانند این فایل را تولید کنند. اما من پس از اجرای simulation در کنسول transcript نرم‌افزار ModelSim این دستورات را وارد کردم:
-
+(توضیح در کامنت‌های داخل کد)
 
 ```console
 vcd file out.vcd  // Set this file as the vcd output
@@ -90,6 +90,16 @@ vcd flush     // Write the file up to now without breaking the simulation
 در صورت فعال بودن ورودی `data` را خوانده و آن را در حافظه و خروجی load می‌کند. (و در این کلاک شمارشی نداریم)
 و در غیر این دو صورت بسته به مقدار `up_down` یک شمارش به بالا یا پایین خواهیم داشت. (اگر فعال باشد بالا و در غیر این صورت پایین)
 
+
+خطای نمایش داده شده این است: (هر جا که به `count` مقداردهی شده)
+
+```console
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(8): (vlog-2110) Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(10): (vlog-2110) Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(12): (vlog-2110) Illegal reference to net "count".
+** Error: C:\modeltech64_2020.4\examples\myproject\counter.v(14): (vlog-2110) Illegal reference to net "count".
+```
+
 ایراد کد این است که برای `count` رجیستری تعریف نشده. در wire که نمی‌شود مقدار ذخیره کرد.
 کد درست در زیر آمده
 
@@ -111,6 +121,46 @@ module counter(clk,reset,up_down,load,data,count);
 	count <= count - 1;
  end
 endmodule :counter
+```
+
+برای تست این ماژول با روش stimulus block کد testbench در زیر آمده است. در این کد سعی شده همه‌ی کارکردهای ماژول مورد ارزیابی قرار گیرد. ابتدا مدار ریست شده و سپس به صورت پایین رونده تعدادی شمارش انجام می‌شود. سپس شمارش به بالارونده تغییر می‌کند. سپس مدار وسط کار ریست شده و سپس یک مقدار در آن load می‌شود. سپس دوباره کمی شماره انجام می‌دهد.
+موج یا wave خروجی این تست در صفحه‌ی بعد آمده است.
+
+```verilog
+module counter_tb();
+reg clk,reset,up_down,load;
+reg [3:0] data;
+wire [3:0] count;
+always #5 clk = ~clk;
+ counter UUT (.clk(clk),.reset(reset),.up_down(up_down),.load(load),.data(data),.count(count));
+initial
+begin
+$monitor("%d", data);
+clk = 0;
+reset = 0;
+up_down = 0;
+load = 0;
+data = 4'b0;
+#20;
+reset = 1;
+#20;
+reset = 0;
+#210;
+up_down = 1;
+#190;
+reset = 1;
+#10;
+reset = 0;
+#50;
+data = 4'b1010;
+load = 1;
+#20;
+load = 0;
+#100;
+$stop;
+
+end
+endmodule
 ```
 
 ## 4

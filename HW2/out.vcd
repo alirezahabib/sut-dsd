@@ -1,0 +1,26 @@
+$date
+	Fri Apr 08 22:46:35 2022
+$end
+$version
+	ModelSim Version 2020.4
+$end
+$timescale
+	1ns
+$end
+
+$scope module test $end
+$var reg 16 ! test [15:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10000 !
+$end
+#10
+b11 !
+#20
+b1101 !
+#30
+b0zzzz11110000 !
+#40
+b0x1zz00 !

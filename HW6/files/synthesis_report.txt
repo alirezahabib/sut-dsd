@@ -1,0 +1,1085 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: ac_controller.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ac_controller.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ac_controller"
+Output Format                      : NGC
+Target Device                      : xc3s50-5-pq208
+
+---- Source Options
+Top Module Name                    : ac_controller
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "sensor_memory.v" in library work
+Compiling verilog file "ac_controller.v" in library work
+Module <sensor_memory> compiled
+Module <ac_controller> compiled
+No errors in compilation
+Analysis of file <"ac_controller.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ac_controller> in library <work> with parameters.
+	latest1 = "1000"
+	latest2 = "1100"
+	ma20_1 = "1001"
+	ma20_2 = "1101"
+	ma40_1 = "1010"
+	ma40_2 = "1110"
+	ma60_1 = "1011"
+	ma60_2 = "1111"
+	reset_memory = "0000"
+
+Analyzing hierarchy for module <sensor_memory> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ac_controller>.
+	latest1 = 4'b1000
+	latest2 = 4'b1100
+	ma20_1 = 4'b1001
+	ma20_2 = 4'b1101
+	ma40_1 = 4'b1010
+	ma40_2 = 4'b1110
+	ma60_1 = 4'b1011
+	ma60_2 = 4'b1111
+	reset_memory = 4'b0000
+Module <ac_controller> is correct for synthesis.
+ 
+Analyzing module <sensor_memory> in library <work>.
+Module <sensor_memory> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <sensor_memory>.
+    Related source file is "sensor_memory.v".
+WARNING:Xst:646 - Signal <temps<1:199>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sum> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <average_temp>.
+    Found 8-bit comparator greater for signal <old_sum_10$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_100$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_101$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_102$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_103$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_104$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_105$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_106$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_107$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_108$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_109$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_11$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_110$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_111$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_112$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_113$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_114$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_115$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_116$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_117$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_118$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_119$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_12$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_120$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_121$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_122$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_123$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_124$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_125$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_126$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_127$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_128$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_129$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_13$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_130$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_131$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_132$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_133$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_134$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_135$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_136$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_137$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_138$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_139$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_14$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_140$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_141$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_142$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_143$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_144$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_145$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_146$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_147$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_148$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_149$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_15$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_150$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_151$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_152$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_153$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_154$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_155$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_156$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_157$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_158$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_159$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_16$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_160$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_161$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_162$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_163$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_164$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_165$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_166$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_167$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_168$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_169$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_17$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_170$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_171$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_172$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_173$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_174$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_175$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_176$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_177$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_178$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_179$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_18$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_180$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_181$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_182$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_183$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_184$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_185$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_186$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_187$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_188$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_189$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_19$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_190$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_191$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_192$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_193$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_194$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_195$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_196$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_197$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_198$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_199$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_20$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_200$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_201$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_202$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_21$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_22$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_23$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_24$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_25$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_26$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_27$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_28$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_29$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_30$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_31$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_32$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_33$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_34$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_35$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_36$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_37$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_38$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_39$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_4$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_40$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_41$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_42$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_43$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_44$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_45$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_46$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_47$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_48$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_49$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_5$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_50$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_51$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_52$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_53$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_54$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_55$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_56$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_57$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_58$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_59$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_6$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_60$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_61$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_62$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_63$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_64$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_65$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_66$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_67$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_68$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_69$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_7$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_70$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_71$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_72$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_73$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_74$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_75$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_76$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_77$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_78$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_79$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_8$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_80$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_81$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_82$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_83$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_84$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_85$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_86$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_87$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_88$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_89$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_9$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_90$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_91$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_92$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_93$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_94$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_95$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_96$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_97$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_98$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <old_sum_99$cmp_lt0000> created at line 44.
+    Found 8-bit comparator greater for signal <sum$cmp_lt0000> created at line 44.
+    Found 8-bit register for signal <temps<0>>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred 199 Adder/Subtractor(s).
+	inferred 200 Comparator(s).
+Unit <sensor_memory> synthesized.
+
+
+Synthesizing Unit <ac_controller>.
+    Related source file is "ac_controller.v".
+    Found 1-bit register for signal <ac>.
+    Found 1-bit register for signal <fan>.
+    Found 1-bit register for signal <fan_high>.
+    Found 8-bit register for signal <subcommand_out>.
+    Found 10-bit subtractor for signal <$sub0000> created at line 110.
+    Found 8-bit register for signal <duration>.
+    Found 8-bit comparator greatequal for signal <fan$cmp_ge0000> created at line 107.
+    Found 8-bit comparator greatequal for signal <fan$cmp_ge0001> created at line 103.
+    Found 8-bit comparator greater for signal <fan$cmp_gt0000> created at line 100.
+    Found 8-bit comparator lessequal for signal <fan$cmp_le0000> created at line 107.
+    Found 8-bit comparator lessequal for signal <fan$cmp_le0001> created at line 100.
+    Found 10-bit comparator greater for signal <fan_high$cmp_gt0000> created at line 110.
+    Found 8-bit comparator less for signal <fan_high$cmp_lt0000> created at line 103.
+    Found 8-bit comparator less for signal <fan_high$cmp_lt0001> created at line 103.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+Unit <ac_controller> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 399
+ 10-bit subtractor                                     : 1
+ 16-bit adder                                          : 398
+# Registers                                            : 9
+ 1-bit register                                        : 3
+ 8-bit register                                        : 6
+# Comparators                                          : 408
+ 10-bit comparator greater                             : 1
+ 8-bit comparator greatequal                           : 2
+ 8-bit comparator greater                              : 401
+ 8-bit comparator less                                 : 2
+ 8-bit comparator lessequal                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <duration_0> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <duration_1> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <duration_6> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <duration_7> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 399
+ 10-bit subtractor                                     : 1
+ 16-bit adder                                          : 392
+ 8-bit adder                                           : 6
+# Registers                                            : 51
+ Flip-Flops                                            : 51
+# Comparators                                          : 408
+ 10-bit comparator greater                             : 1
+ 8-bit comparator greatequal                           : 2
+ 8-bit comparator greater                              : 401
+ 8-bit comparator less                                 : 2
+ 8-bit comparator lessequal                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <duration_0> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <duration_1> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <duration_6> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <duration_7> (without init value) has a constant value of 0 in block <ac_controller>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <ac_controller> ...
+
+Optimizing unit <sensor_memory> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ac_controller, actual ratio is 190.
+Optimizing block <ac_controller> to meet ratio 100 (+ 5) of 768 slices :
+WARNING:Xst:2254 - Area constraint could not be met for block <ac_controller>, final ratio is 161.
+FlipFlop duration_2 has been replicated 1 time(s)
+FlipFlop duration_3 has been replicated 4 time(s)
+FlipFlop duration_4 has been replicated 5 time(s)
+FlipFlop duration_5 has been replicated 4 time(s)
+FlipFlop memory_1/temps_0_0 has been replicated 1 time(s)
+FlipFlop memory_1/temps_0_1 has been replicated 1 time(s)
+FlipFlop memory_1/temps_0_2 has been replicated 1 time(s)
+FlipFlop memory_1/temps_0_3 has been replicated 1 time(s)
+FlipFlop memory_1/temps_0_4 has been replicated 1 time(s)
+FlipFlop memory_1/temps_0_5 has been replicated 1 time(s)
+FlipFlop memory_1/temps_0_6 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_0 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_1 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_2 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_3 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_4 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_5 has been replicated 1 time(s)
+FlipFlop memory_2/temps_0_6 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 75
+ Flip-Flops                                            : 75
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ac_controller.ngr
+Top Level Output File Name         : ac_controller
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 42
+
+Cell Usage :
+# BELS                             : 5176
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 1016
+#      LUT2                        : 234
+#      LUT2_D                      : 2
+#      LUT3                        : 183
+#      LUT3_D                      : 14
+#      LUT4                        : 576
+#      LUT4_D                      : 49
+#      LUT4_L                      : 8
+#      MULT_AND                    : 2
+#      MUXCY                       : 1455
+#      MUXF5                       : 10
+#      VCC                         : 1
+#      XORCY                       : 1624
+# FlipFlops/Latches                : 75
+#      FDE                         : 18
+#      FDR                         : 46
+#      FDRE                        : 11
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 41
+#      IBUF                        : 30
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50pq208-5 
+
+ Number of Slices:                     1137  out of    768   148% (*) 
+ Number of Slice Flip Flops:             75  out of   1536     4%  
+ Number of 4 input LUTs:               2083  out of   1536   135% (*) 
+ Number of IOs:                          42
+ Number of bonded IOBs:                  42  out of    124    33%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 75    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 208.604ns (Maximum Frequency: 4.794MHz)
+   Minimum input arrival time before clock: 206.219ns
+   Maximum output required time after clock: 6.280ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 208.604ns (frequency: 4.794MHz)
+  Total number of paths / destination ports: 18162364966233 / 48
+-------------------------------------------------------------------------
+Delay:               208.604ns (Levels of Logic = 210)
+  Source:            duration_4_2 (FF)
+  Destination:       memory_2/average_temp_7 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: duration_4_2 to memory_2/average_temp_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             33   0.626   1.639  duration_4_2 (duration_4_2)
+     LUT4:I2->O           12   0.479   1.120  memory_2/old_sum_6_cmp_lt000011_1 (memory_2/old_sum_6_cmp_lt000011)
+     LUT2:I1->O            1   0.479   0.681  memory_2/old_sum_5_and00071 (memory_2/old_sum_5_and0007)
+     MUXCY:CI->O           1   0.055   0.000  memory_2/Madd__old_sum_5_Madd_cy<0> (memory_2/Madd__old_sum_5_Madd_cy<0>)
+     XORCY:CI->O           2   0.786   0.768  memory_2/Madd__old_sum_5_Madd_xor<1> (memory_2/_old_sum_5<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_7R4 (memory_2/Madd__old_sum_7R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_7_Madd_xor<1> (memory_2/_old_sum_7<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_9_Madd_cy<1>_rt (memory_2/Madd__old_sum_9_Madd_cy<1>_rt)
+     XORCY:LI->O           3   0.541   0.830  memory_2/Madd__old_sum_9_Madd_xor<1> (memory_2/_old_sum_9<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_11R7 (memory_2/Madd__old_sum_11R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_11_Madd_xor<1> (memory_2/_old_sum_11<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_13_Madd_cy<1>_rt (memory_2/Madd__old_sum_13_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_13_Madd_xor<1> (memory_2/_old_sum_13<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_15R7 (memory_2/Madd__old_sum_15R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_15_Madd_xor<1> (memory_2/Madd__old_sum_17R)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_17_Madd_cy<1>_rt (memory_2/Madd__old_sum_17_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_17_Madd_xor<1> (memory_2/_old_sum_17<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_19R7 (memory_2/Madd__old_sum_19R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_19_Madd_xor<1> (memory_2/_old_sum_19<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_21_Madd_cy<1>_rt (memory_2/Madd__old_sum_21_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_21_Madd_xor<1> (memory_2/_old_sum_21<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_23R7 (memory_2/Madd__old_sum_23R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_23_Madd_xor<1> (memory_2/_old_sum_23<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_25_Madd_cy<1>_rt (memory_2/Madd__old_sum_25_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_25_Madd_xor<1> (memory_2/_old_sum_25<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_27R7 (memory_2/Madd__old_sum_27R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_27_Madd_xor<1> (memory_2/_old_sum_27<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_29_Madd_cy<1>_rt (memory_2/Madd__old_sum_29_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_29_Madd_xor<1> (memory_2/_old_sum_29<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_31R7 (memory_2/Madd__old_sum_31R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_31_Madd_xor<1> (memory_2/Madd__old_sum_33R)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_33_Madd_cy<1>_rt (memory_2/Madd__old_sum_33_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_33_Madd_xor<1> (memory_2/_old_sum_33<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_35R7 (memory_2/Madd__old_sum_35R)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_35_Madd_xor<1> (memory_2/_old_sum_35<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_37R7 (memory_2/Madd__old_sum_37R)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_37_Madd_xor<1> (memory_2/_old_sum_37<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_39R7 (memory_2/Madd__old_sum_39R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_39_Madd_xor<1> (memory_2/_old_sum_39<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_41_Madd_cy<1>_rt (memory_2/Madd__old_sum_41_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_41_Madd_xor<1> (memory_2/_old_sum_41<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_43R7 (memory_2/Madd__old_sum_43R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_43_Madd_xor<1> (memory_2/_old_sum_43<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_45_Madd_cy<1>_rt (memory_2/Madd__old_sum_45_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_45_Madd_xor<1> (memory_2/_old_sum_45<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_47R7 (memory_2/Madd__old_sum_47R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_47_Madd_xor<1> (memory_2/Madd__old_sum_49R)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_49_Madd_cy<1>_rt (memory_2/Madd__old_sum_49_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_49_Madd_xor<1> (memory_2/_old_sum_49<1>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_51C6 (memory_2/Madd__old_sum_51C)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_51_Madd_lut<2> (memory_2/Madd__old_sum_51_Madd_lut<2>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_51_Madd_xor<2> (memory_2/_old_sum_51<2>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_53C11 (memory_2/Madd__old_sum_53C1)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_53_Madd_lut<3> (memory_2/Madd__old_sum_53_Madd_lut<3>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_53_Madd_xor<3> (memory_2/_old_sum_53<3>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_55C21 (memory_2/Madd__old_sum_55C2)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_55_Madd_lut<4> (memory_2/Madd__old_sum_55_Madd_lut<4>)
+     XORCY:LI->O           1   0.541   0.851  memory_2/Madd__old_sum_55_Madd_xor<4> (memory_2/_old_sum_55<4>)
+     LUT2:I1->O            1   0.479   0.000  memory_2/Madd__old_sum_57_Madd_lut<4> (memory_2/Madd__old_sum_57_Madd_lut<4>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_57_Madd_xor<4> (memory_2/_old_sum_57<4>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_59C31 (memory_2/Madd__old_sum_59C3)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_59_Madd_lut<5> (memory_2/Madd__old_sum_59_Madd_lut<5>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_59_Madd_xor<5> (memory_2/_old_sum_59<5>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_61C41 (memory_2/Madd__old_sum_61C4)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_61_Madd_lut<6> (memory_2/Madd__old_sum_61_Madd_lut<6>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_61_Madd_xor<6> (memory_2/_old_sum_61<6>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_63_Madd_lut<6> (memory_2/Madd__old_sum_63_Madd_lut<6>)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_63_Madd_xor<6> (memory_2/Madd__old_sum_65R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_65_Madd_cy<6>_rt (memory_2/Madd__old_sum_65_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_65_Madd_xor<6> (memory_2/Madd__old_sum_67R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_67_Madd_cy<6>_rt (memory_2/Madd__old_sum_67_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_67_Madd_xor<6> (memory_2/Madd__old_sum_69R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_69_Madd_cy<6>_rt (memory_2/Madd__old_sum_69_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_69_Madd_xor<6> (memory_2/Madd__old_sum_71R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_71_Madd_cy<6>_rt (memory_2/Madd__old_sum_71_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_71_Madd_xor<6> (memory_2/Madd__old_sum_73R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_73_Madd_cy<6>_rt (memory_2/Madd__old_sum_73_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_73_Madd_xor<6> (memory_2/Madd__old_sum_75R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_75_Madd_cy<6>_rt (memory_2/Madd__old_sum_75_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_75_Madd_xor<6> (memory_2/Madd__old_sum_77R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_77_Madd_cy<6>_rt (memory_2/Madd__old_sum_77_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_77_Madd_xor<6> (memory_2/Madd__old_sum_79R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_79_Madd_cy<6>_rt (memory_2/Madd__old_sum_79_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_79_Madd_xor<6> (memory_2/Madd__old_sum_81R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_81_Madd_cy<6>_rt (memory_2/Madd__old_sum_81_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_81_Madd_xor<6> (memory_2/Madd__old_sum_83R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_83_Madd_cy<6>_rt (memory_2/Madd__old_sum_83_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_83_Madd_xor<6> (memory_2/Madd__old_sum_85R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_85_Madd_cy<6>_rt (memory_2/Madd__old_sum_85_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_85_Madd_xor<6> (memory_2/Madd__old_sum_87R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_87_Madd_cy<6>_rt (memory_2/Madd__old_sum_87_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_87_Madd_xor<6> (memory_2/Madd__old_sum_89R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_89_Madd_cy<6>_rt (memory_2/Madd__old_sum_89_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_89_Madd_xor<6> (memory_2/Madd__old_sum_91R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_91_Madd_cy<6>_rt (memory_2/Madd__old_sum_91_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_91_Madd_xor<6> (memory_2/Madd__old_sum_93R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_93_Madd_cy<6>_rt (memory_2/Madd__old_sum_93_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_93_Madd_xor<6> (memory_2/Madd__old_sum_95R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_95_Madd_cy<6>_rt (memory_2/Madd__old_sum_95_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_95_Madd_xor<6> (memory_2/Madd__old_sum_97R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_97_Madd_cy<6>_rt (memory_2/Madd__old_sum_97_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_97_Madd_xor<6> (memory_2/Madd__old_sum_99R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_99_Madd_cy<6>_rt (memory_2/Madd__old_sum_99_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_99_Madd_xor<6> (memory_2/Madd__old_sum_101R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_101_Madd_cy<6>_rt (memory_2/Madd__old_sum_101_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_101_Madd_xor<6> (memory_2/Madd__old_sum_103R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_103_Madd_cy<6>_rt (memory_2/Madd__old_sum_103_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_103_Madd_xor<6> (memory_2/Madd__old_sum_105R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_105_Madd_cy<6>_rt (memory_2/Madd__old_sum_105_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_105_Madd_xor<6> (memory_2/Madd__old_sum_107R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_107_Madd_cy<6>_rt (memory_2/Madd__old_sum_107_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_107_Madd_xor<6> (memory_2/Madd__old_sum_109R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_109_Madd_cy<6>_rt (memory_2/Madd__old_sum_109_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_109_Madd_xor<6> (memory_2/Madd__old_sum_111R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_111_Madd_cy<6>_rt (memory_2/Madd__old_sum_111_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_111_Madd_xor<6> (memory_2/Madd__old_sum_113R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_113_Madd_cy<6>_rt (memory_2/Madd__old_sum_113_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_113_Madd_xor<6> (memory_2/Madd__old_sum_115R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_115_Madd_cy<6>_rt (memory_2/Madd__old_sum_115_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_115_Madd_xor<6> (memory_2/Madd__old_sum_117R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_117_Madd_cy<6>_rt (memory_2/Madd__old_sum_117_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_117_Madd_xor<6> (memory_2/Madd__old_sum_119R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_119_Madd_cy<6>_rt (memory_2/Madd__old_sum_119_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_119_Madd_xor<6> (memory_2/Madd__old_sum_121R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_121_Madd_cy<6>_rt (memory_2/Madd__old_sum_121_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_121_Madd_xor<6> (memory_2/Madd__old_sum_123R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_123_Madd_cy<6>_rt (memory_2/Madd__old_sum_123_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_123_Madd_xor<6> (memory_2/Madd__old_sum_125R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_125_Madd_cy<6>_rt (memory_2/Madd__old_sum_125_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_125_Madd_xor<6> (memory_2/Madd__old_sum_127R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_127_Madd_cy<6>_rt (memory_2/Madd__old_sum_127_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_127_Madd_xor<6> (memory_2/Madd__old_sum_129R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_129_Madd_cy<6>_rt (memory_2/Madd__old_sum_129_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_129_Madd_xor<6> (memory_2/Madd__old_sum_131R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_131_Madd_cy<6>_rt (memory_2/Madd__old_sum_131_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_131_Madd_xor<6> (memory_2/Madd__old_sum_133R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_133_Madd_cy<6>_rt (memory_2/Madd__old_sum_133_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_133_Madd_xor<6> (memory_2/Madd__old_sum_135R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_135_Madd_cy<6>_rt (memory_2/Madd__old_sum_135_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_135_Madd_xor<6> (memory_2/Madd__old_sum_137R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_137_Madd_cy<6>_rt (memory_2/Madd__old_sum_137_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_137_Madd_xor<6> (memory_2/Madd__old_sum_139R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_139_Madd_cy<6>_rt (memory_2/Madd__old_sum_139_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_139_Madd_xor<6> (memory_2/Madd__old_sum_141R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_141_Madd_cy<6>_rt (memory_2/Madd__old_sum_141_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_141_Madd_xor<6> (memory_2/Madd__old_sum_143R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_143_Madd_cy<6>_rt (memory_2/Madd__old_sum_143_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_143_Madd_xor<6> (memory_2/Madd__old_sum_145R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_145_Madd_cy<6>_rt (memory_2/Madd__old_sum_145_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_145_Madd_xor<6> (memory_2/Madd__old_sum_147R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_147_Madd_cy<6>_rt (memory_2/Madd__old_sum_147_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_147_Madd_xor<6> (memory_2/Madd__old_sum_149R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_149_Madd_cy<6>_rt (memory_2/Madd__old_sum_149_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_149_Madd_xor<6> (memory_2/Madd__old_sum_151R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_151_Madd_cy<6>_rt (memory_2/Madd__old_sum_151_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_151_Madd_xor<6> (memory_2/Madd__old_sum_153R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_153_Madd_cy<6>_rt (memory_2/Madd__old_sum_153_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_153_Madd_xor<6> (memory_2/Madd__old_sum_155R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_155_Madd_cy<6>_rt (memory_2/Madd__old_sum_155_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_155_Madd_xor<6> (memory_2/Madd__old_sum_157R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_157_Madd_cy<6>_rt (memory_2/Madd__old_sum_157_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_157_Madd_xor<6> (memory_2/Madd__old_sum_159R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_159_Madd_cy<6>_rt (memory_2/Madd__old_sum_159_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_159_Madd_xor<6> (memory_2/Madd__old_sum_161R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_161_Madd_cy<6>_rt (memory_2/Madd__old_sum_161_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_161_Madd_xor<6> (memory_2/Madd__old_sum_163R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_163_Madd_cy<6>_rt (memory_2/Madd__old_sum_163_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_163_Madd_xor<6> (memory_2/Madd__old_sum_165R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_165_Madd_cy<6>_rt (memory_2/Madd__old_sum_165_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_165_Madd_xor<6> (memory_2/Madd__old_sum_167R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_167_Madd_cy<6>_rt (memory_2/Madd__old_sum_167_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_167_Madd_xor<6> (memory_2/Madd__old_sum_169R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_169_Madd_cy<6>_rt (memory_2/Madd__old_sum_169_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_169_Madd_xor<6> (memory_2/Madd__old_sum_171R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_171_Madd_cy<6>_rt (memory_2/Madd__old_sum_171_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_171_Madd_xor<6> (memory_2/Madd__old_sum_173R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_173_Madd_cy<6>_rt (memory_2/Madd__old_sum_173_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_173_Madd_xor<6> (memory_2/Madd__old_sum_175R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_175_Madd_cy<6>_rt (memory_2/Madd__old_sum_175_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_175_Madd_xor<6> (memory_2/Madd__old_sum_177R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_177_Madd_cy<6>_rt (memory_2/Madd__old_sum_177_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_177_Madd_xor<6> (memory_2/Madd__old_sum_179R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_179_Madd_cy<6>_rt (memory_2/Madd__old_sum_179_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_179_Madd_xor<6> (memory_2/Madd__old_sum_181R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_181_Madd_cy<6>_rt (memory_2/Madd__old_sum_181_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_181_Madd_xor<6> (memory_2/Madd__old_sum_183R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_183_Madd_cy<6>_rt (memory_2/Madd__old_sum_183_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_183_Madd_xor<6> (memory_2/Madd__old_sum_185R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_185_Madd_cy<6>_rt (memory_2/Madd__old_sum_185_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_185_Madd_xor<6> (memory_2/Madd__old_sum_187R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_187_Madd_cy<6>_rt (memory_2/Madd__old_sum_187_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_187_Madd_xor<6> (memory_2/Madd__old_sum_189R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_189_Madd_cy<6>_rt (memory_2/Madd__old_sum_189_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_189_Madd_xor<6> (memory_2/Madd__old_sum_191R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_191_Madd_cy<6>_rt (memory_2/Madd__old_sum_191_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_191_Madd_xor<6> (memory_2/Madd__old_sum_193R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_193_Madd_cy<6>_rt (memory_2/Madd__old_sum_193_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_193_Madd_xor<6> (memory_2/Madd__old_sum_195R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_195_Madd_cy<6>_rt (memory_2/Madd__old_sum_195_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_195_Madd_xor<6> (memory_2/Madd__old_sum_197R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_197_Madd_cy<6>_rt (memory_2/Madd__old_sum_197_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_197_Madd_xor<6> (memory_2/Madd__old_sum_199R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_199_Madd_cy<6>_rt (memory_2/Madd__old_sum_199_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_199_Madd_xor<6> (memory_2/Madd__old_sum_200_Madd_lut<6>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_200_Madd_cy<6>_rt (memory_2/Madd__old_sum_200_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_200_Madd_xor<6> (memory_2/Madd__old_sum_201_Madd_lut<6>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_201_Madd_cy<6>_rt (memory_2/Madd__old_sum_201_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_201_Madd_xor<6> (memory_2/Madd__old_sum_202_Madd_lut<6>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_202_Madd_cy<6>_rt (memory_2/Madd__old_sum_202_Madd_cy<6>_rt)
+     MUXCY:S->O            0   0.435   0.000  memory_2/Madd__old_sum_202_Madd_cy<6> (memory_2/Madd__old_sum_202_Madd_cy<6>)
+     XORCY:CI->O           1   0.786   0.000  memory_2/Madd__old_sum_202_Madd_xor<7> (memory_2/_old_sum_202<7>)
+     FDR:D                     0.176          memory_2/average_temp_7
+    ----------------------------------------
+    Total                    208.604ns (107.677ns logic, 100.928ns route)
+                                       (51.6% logic, 48.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 218021832241 / 161
+-------------------------------------------------------------------------
+Offset:              206.219ns (Levels of Logic = 210)
+  Source:            sensor2<0> (PAD)
+  Destination:       memory_2/average_temp_7 (FF)
+  Destination Clock: clock rising
+
+  Data Path: sensor2<0> to memory_2/average_temp_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.715   1.066  sensor2_0_IBUF (sensor2_0_IBUF)
+     LUT3:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_5_Madd_lut<0>1 (memory_2/Madd__old_sum_5_Madd_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  memory_2/Madd__old_sum_5_Madd_cy<0> (memory_2/Madd__old_sum_5_Madd_cy<0>)
+     XORCY:CI->O           2   0.786   0.768  memory_2/Madd__old_sum_5_Madd_xor<1> (memory_2/_old_sum_5<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_7R4 (memory_2/Madd__old_sum_7R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_7_Madd_xor<1> (memory_2/_old_sum_7<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_9_Madd_cy<1>_rt (memory_2/Madd__old_sum_9_Madd_cy<1>_rt)
+     XORCY:LI->O           3   0.541   0.830  memory_2/Madd__old_sum_9_Madd_xor<1> (memory_2/_old_sum_9<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_11R7 (memory_2/Madd__old_sum_11R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_11_Madd_xor<1> (memory_2/_old_sum_11<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_13_Madd_cy<1>_rt (memory_2/Madd__old_sum_13_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_13_Madd_xor<1> (memory_2/_old_sum_13<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_15R7 (memory_2/Madd__old_sum_15R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_15_Madd_xor<1> (memory_2/Madd__old_sum_17R)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_17_Madd_cy<1>_rt (memory_2/Madd__old_sum_17_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_17_Madd_xor<1> (memory_2/_old_sum_17<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_19R7 (memory_2/Madd__old_sum_19R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_19_Madd_xor<1> (memory_2/_old_sum_19<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_21_Madd_cy<1>_rt (memory_2/Madd__old_sum_21_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_21_Madd_xor<1> (memory_2/_old_sum_21<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_23R7 (memory_2/Madd__old_sum_23R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_23_Madd_xor<1> (memory_2/_old_sum_23<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_25_Madd_cy<1>_rt (memory_2/Madd__old_sum_25_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_25_Madd_xor<1> (memory_2/_old_sum_25<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_27R7 (memory_2/Madd__old_sum_27R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_27_Madd_xor<1> (memory_2/_old_sum_27<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_29_Madd_cy<1>_rt (memory_2/Madd__old_sum_29_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_29_Madd_xor<1> (memory_2/_old_sum_29<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_31R7 (memory_2/Madd__old_sum_31R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_31_Madd_xor<1> (memory_2/Madd__old_sum_33R)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_33_Madd_cy<1>_rt (memory_2/Madd__old_sum_33_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_33_Madd_xor<1> (memory_2/_old_sum_33<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_35R7 (memory_2/Madd__old_sum_35R)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_35_Madd_xor<1> (memory_2/_old_sum_35<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_37R7 (memory_2/Madd__old_sum_37R)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_37_Madd_xor<1> (memory_2/_old_sum_37<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_39R7 (memory_2/Madd__old_sum_39R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_39_Madd_xor<1> (memory_2/_old_sum_39<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_41_Madd_cy<1>_rt (memory_2/Madd__old_sum_41_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_41_Madd_xor<1> (memory_2/_old_sum_41<1>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_43R7 (memory_2/Madd__old_sum_43R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_43_Madd_xor<1> (memory_2/_old_sum_43<1>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_45_Madd_cy<1>_rt (memory_2/Madd__old_sum_45_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.804  memory_2/Madd__old_sum_45_Madd_xor<1> (memory_2/_old_sum_45<1>)
+     LUT3:I2->O            1   0.479   0.000  memory_2/Madd__old_sum_47R7 (memory_2/Madd__old_sum_47R)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_47_Madd_xor<1> (memory_2/Madd__old_sum_49R)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_49_Madd_cy<1>_rt (memory_2/Madd__old_sum_49_Madd_cy<1>_rt)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_49_Madd_xor<1> (memory_2/_old_sum_49<1>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_51C6 (memory_2/Madd__old_sum_51C)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_51_Madd_lut<2> (memory_2/Madd__old_sum_51_Madd_lut<2>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_51_Madd_xor<2> (memory_2/_old_sum_51<2>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_53C11 (memory_2/Madd__old_sum_53C1)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_53_Madd_lut<3> (memory_2/Madd__old_sum_53_Madd_lut<3>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_53_Madd_xor<3> (memory_2/_old_sum_53<3>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_55C21 (memory_2/Madd__old_sum_55C2)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_55_Madd_lut<4> (memory_2/Madd__old_sum_55_Madd_lut<4>)
+     XORCY:LI->O           1   0.541   0.851  memory_2/Madd__old_sum_55_Madd_xor<4> (memory_2/_old_sum_55<4>)
+     LUT2:I1->O            1   0.479   0.000  memory_2/Madd__old_sum_57_Madd_lut<4> (memory_2/Madd__old_sum_57_Madd_lut<4>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_57_Madd_xor<4> (memory_2/_old_sum_57<4>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_59C31 (memory_2/Madd__old_sum_59C3)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_59_Madd_lut<5> (memory_2/Madd__old_sum_59_Madd_lut<5>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_59_Madd_xor<5> (memory_2/_old_sum_59<5>)
+     LUT4:I3->O            1   0.479   0.704  memory_2/Madd__old_sum_61C41 (memory_2/Madd__old_sum_61C4)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_61_Madd_lut<6> (memory_2/Madd__old_sum_61_Madd_lut<6>)
+     XORCY:LI->O           2   0.541   0.768  memory_2/Madd__old_sum_61_Madd_xor<6> (memory_2/_old_sum_61<6>)
+     LUT4:I3->O            1   0.479   0.000  memory_2/Madd__old_sum_63_Madd_lut<6> (memory_2/Madd__old_sum_63_Madd_lut<6>)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_63_Madd_xor<6> (memory_2/Madd__old_sum_65R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_65_Madd_cy<6>_rt (memory_2/Madd__old_sum_65_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_65_Madd_xor<6> (memory_2/Madd__old_sum_67R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_67_Madd_cy<6>_rt (memory_2/Madd__old_sum_67_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_67_Madd_xor<6> (memory_2/Madd__old_sum_69R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_69_Madd_cy<6>_rt (memory_2/Madd__old_sum_69_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_69_Madd_xor<6> (memory_2/Madd__old_sum_71R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_71_Madd_cy<6>_rt (memory_2/Madd__old_sum_71_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_71_Madd_xor<6> (memory_2/Madd__old_sum_73R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_73_Madd_cy<6>_rt (memory_2/Madd__old_sum_73_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_73_Madd_xor<6> (memory_2/Madd__old_sum_75R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_75_Madd_cy<6>_rt (memory_2/Madd__old_sum_75_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_75_Madd_xor<6> (memory_2/Madd__old_sum_77R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_77_Madd_cy<6>_rt (memory_2/Madd__old_sum_77_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_77_Madd_xor<6> (memory_2/Madd__old_sum_79R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_79_Madd_cy<6>_rt (memory_2/Madd__old_sum_79_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_79_Madd_xor<6> (memory_2/Madd__old_sum_81R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_81_Madd_cy<6>_rt (memory_2/Madd__old_sum_81_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_81_Madd_xor<6> (memory_2/Madd__old_sum_83R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_83_Madd_cy<6>_rt (memory_2/Madd__old_sum_83_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_83_Madd_xor<6> (memory_2/Madd__old_sum_85R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_85_Madd_cy<6>_rt (memory_2/Madd__old_sum_85_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_85_Madd_xor<6> (memory_2/Madd__old_sum_87R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_87_Madd_cy<6>_rt (memory_2/Madd__old_sum_87_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_87_Madd_xor<6> (memory_2/Madd__old_sum_89R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_89_Madd_cy<6>_rt (memory_2/Madd__old_sum_89_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_89_Madd_xor<6> (memory_2/Madd__old_sum_91R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_91_Madd_cy<6>_rt (memory_2/Madd__old_sum_91_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_91_Madd_xor<6> (memory_2/Madd__old_sum_93R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_93_Madd_cy<6>_rt (memory_2/Madd__old_sum_93_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_93_Madd_xor<6> (memory_2/Madd__old_sum_95R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_95_Madd_cy<6>_rt (memory_2/Madd__old_sum_95_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_95_Madd_xor<6> (memory_2/Madd__old_sum_97R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_97_Madd_cy<6>_rt (memory_2/Madd__old_sum_97_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_97_Madd_xor<6> (memory_2/Madd__old_sum_99R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_99_Madd_cy<6>_rt (memory_2/Madd__old_sum_99_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_99_Madd_xor<6> (memory_2/Madd__old_sum_101R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_101_Madd_cy<6>_rt (memory_2/Madd__old_sum_101_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_101_Madd_xor<6> (memory_2/Madd__old_sum_103R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_103_Madd_cy<6>_rt (memory_2/Madd__old_sum_103_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_103_Madd_xor<6> (memory_2/Madd__old_sum_105R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_105_Madd_cy<6>_rt (memory_2/Madd__old_sum_105_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_105_Madd_xor<6> (memory_2/Madd__old_sum_107R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_107_Madd_cy<6>_rt (memory_2/Madd__old_sum_107_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_107_Madd_xor<6> (memory_2/Madd__old_sum_109R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_109_Madd_cy<6>_rt (memory_2/Madd__old_sum_109_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_109_Madd_xor<6> (memory_2/Madd__old_sum_111R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_111_Madd_cy<6>_rt (memory_2/Madd__old_sum_111_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_111_Madd_xor<6> (memory_2/Madd__old_sum_113R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_113_Madd_cy<6>_rt (memory_2/Madd__old_sum_113_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_113_Madd_xor<6> (memory_2/Madd__old_sum_115R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_115_Madd_cy<6>_rt (memory_2/Madd__old_sum_115_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_115_Madd_xor<6> (memory_2/Madd__old_sum_117R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_117_Madd_cy<6>_rt (memory_2/Madd__old_sum_117_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_117_Madd_xor<6> (memory_2/Madd__old_sum_119R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_119_Madd_cy<6>_rt (memory_2/Madd__old_sum_119_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_119_Madd_xor<6> (memory_2/Madd__old_sum_121R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_121_Madd_cy<6>_rt (memory_2/Madd__old_sum_121_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_121_Madd_xor<6> (memory_2/Madd__old_sum_123R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_123_Madd_cy<6>_rt (memory_2/Madd__old_sum_123_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_123_Madd_xor<6> (memory_2/Madd__old_sum_125R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_125_Madd_cy<6>_rt (memory_2/Madd__old_sum_125_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_125_Madd_xor<6> (memory_2/Madd__old_sum_127R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_127_Madd_cy<6>_rt (memory_2/Madd__old_sum_127_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_127_Madd_xor<6> (memory_2/Madd__old_sum_129R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_129_Madd_cy<6>_rt (memory_2/Madd__old_sum_129_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_129_Madd_xor<6> (memory_2/Madd__old_sum_131R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_131_Madd_cy<6>_rt (memory_2/Madd__old_sum_131_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_131_Madd_xor<6> (memory_2/Madd__old_sum_133R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_133_Madd_cy<6>_rt (memory_2/Madd__old_sum_133_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_133_Madd_xor<6> (memory_2/Madd__old_sum_135R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_135_Madd_cy<6>_rt (memory_2/Madd__old_sum_135_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_135_Madd_xor<6> (memory_2/Madd__old_sum_137R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_137_Madd_cy<6>_rt (memory_2/Madd__old_sum_137_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_137_Madd_xor<6> (memory_2/Madd__old_sum_139R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_139_Madd_cy<6>_rt (memory_2/Madd__old_sum_139_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_139_Madd_xor<6> (memory_2/Madd__old_sum_141R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_141_Madd_cy<6>_rt (memory_2/Madd__old_sum_141_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_141_Madd_xor<6> (memory_2/Madd__old_sum_143R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_143_Madd_cy<6>_rt (memory_2/Madd__old_sum_143_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_143_Madd_xor<6> (memory_2/Madd__old_sum_145R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_145_Madd_cy<6>_rt (memory_2/Madd__old_sum_145_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_145_Madd_xor<6> (memory_2/Madd__old_sum_147R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_147_Madd_cy<6>_rt (memory_2/Madd__old_sum_147_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_147_Madd_xor<6> (memory_2/Madd__old_sum_149R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_149_Madd_cy<6>_rt (memory_2/Madd__old_sum_149_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_149_Madd_xor<6> (memory_2/Madd__old_sum_151R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_151_Madd_cy<6>_rt (memory_2/Madd__old_sum_151_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_151_Madd_xor<6> (memory_2/Madd__old_sum_153R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_153_Madd_cy<6>_rt (memory_2/Madd__old_sum_153_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_153_Madd_xor<6> (memory_2/Madd__old_sum_155R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_155_Madd_cy<6>_rt (memory_2/Madd__old_sum_155_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_155_Madd_xor<6> (memory_2/Madd__old_sum_157R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_157_Madd_cy<6>_rt (memory_2/Madd__old_sum_157_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_157_Madd_xor<6> (memory_2/Madd__old_sum_159R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_159_Madd_cy<6>_rt (memory_2/Madd__old_sum_159_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_159_Madd_xor<6> (memory_2/Madd__old_sum_161R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_161_Madd_cy<6>_rt (memory_2/Madd__old_sum_161_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_161_Madd_xor<6> (memory_2/Madd__old_sum_163R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_163_Madd_cy<6>_rt (memory_2/Madd__old_sum_163_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_163_Madd_xor<6> (memory_2/Madd__old_sum_165R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_165_Madd_cy<6>_rt (memory_2/Madd__old_sum_165_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_165_Madd_xor<6> (memory_2/Madd__old_sum_167R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_167_Madd_cy<6>_rt (memory_2/Madd__old_sum_167_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_167_Madd_xor<6> (memory_2/Madd__old_sum_169R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_169_Madd_cy<6>_rt (memory_2/Madd__old_sum_169_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_169_Madd_xor<6> (memory_2/Madd__old_sum_171R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_171_Madd_cy<6>_rt (memory_2/Madd__old_sum_171_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_171_Madd_xor<6> (memory_2/Madd__old_sum_173R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_173_Madd_cy<6>_rt (memory_2/Madd__old_sum_173_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_173_Madd_xor<6> (memory_2/Madd__old_sum_175R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_175_Madd_cy<6>_rt (memory_2/Madd__old_sum_175_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_175_Madd_xor<6> (memory_2/Madd__old_sum_177R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_177_Madd_cy<6>_rt (memory_2/Madd__old_sum_177_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_177_Madd_xor<6> (memory_2/Madd__old_sum_179R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_179_Madd_cy<6>_rt (memory_2/Madd__old_sum_179_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_179_Madd_xor<6> (memory_2/Madd__old_sum_181R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_181_Madd_cy<6>_rt (memory_2/Madd__old_sum_181_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_181_Madd_xor<6> (memory_2/Madd__old_sum_183R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_183_Madd_cy<6>_rt (memory_2/Madd__old_sum_183_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_183_Madd_xor<6> (memory_2/Madd__old_sum_185R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_185_Madd_cy<6>_rt (memory_2/Madd__old_sum_185_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_185_Madd_xor<6> (memory_2/Madd__old_sum_187R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_187_Madd_cy<6>_rt (memory_2/Madd__old_sum_187_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_187_Madd_xor<6> (memory_2/Madd__old_sum_189R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_189_Madd_cy<6>_rt (memory_2/Madd__old_sum_189_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_189_Madd_xor<6> (memory_2/Madd__old_sum_191R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_191_Madd_cy<6>_rt (memory_2/Madd__old_sum_191_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_191_Madd_xor<6> (memory_2/Madd__old_sum_193R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_193_Madd_cy<6>_rt (memory_2/Madd__old_sum_193_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_193_Madd_xor<6> (memory_2/Madd__old_sum_195R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_195_Madd_cy<6>_rt (memory_2/Madd__old_sum_195_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_195_Madd_xor<6> (memory_2/Madd__old_sum_197R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_197_Madd_cy<6>_rt (memory_2/Madd__old_sum_197_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_197_Madd_xor<6> (memory_2/Madd__old_sum_199R5)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_199_Madd_cy<6>_rt (memory_2/Madd__old_sum_199_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_199_Madd_xor<6> (memory_2/Madd__old_sum_200_Madd_lut<6>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_200_Madd_cy<6>_rt (memory_2/Madd__old_sum_200_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_200_Madd_xor<6> (memory_2/Madd__old_sum_201_Madd_lut<6>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_201_Madd_cy<6>_rt (memory_2/Madd__old_sum_201_Madd_cy<6>_rt)
+     XORCY:LI->O           1   0.541   0.976  memory_2/Madd__old_sum_201_Madd_xor<6> (memory_2/Madd__old_sum_202_Madd_lut<6>)
+     LUT1:I0->O            1   0.479   0.000  memory_2/Madd__old_sum_202_Madd_cy<6>_rt (memory_2/Madd__old_sum_202_Madd_cy<6>_rt)
+     MUXCY:S->O            0   0.435   0.000  memory_2/Madd__old_sum_202_Madd_cy<6> (memory_2/Madd__old_sum_202_Madd_cy<6>)
+     XORCY:CI->O           1   0.786   0.000  memory_2/Madd__old_sum_202_Madd_xor<7> (memory_2/_old_sum_202<7>)
+     FDR:D                     0.176          memory_2/average_temp_7
+    ----------------------------------------
+    Total                    206.219ns (107.666ns logic, 98.553ns route)
+                                       (52.2% logic, 47.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              6.280ns (Levels of Logic = 1)
+  Source:            subcommand_out_7 (FF)
+  Destination:       subcommand_out<7> (PAD)
+  Source Clock:      clock rising
+
+  Data Path: subcommand_out_7 to subcommand_out<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.626   0.745  subcommand_out_7 (subcommand_out_7)
+     OBUF:I->O                 4.909          subcommand_out_7_OBUF (subcommand_out<7>)
+    ----------------------------------------
+    Total                      6.280ns (5.535ns logic, 0.745ns route)
+                                       (88.1% logic, 11.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 41.00 secs
+Total CPU time to Xst completion: 40.66 secs
+ 
+--> 
+
+Total memory usage is 4586296 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
